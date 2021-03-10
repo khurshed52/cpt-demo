@@ -59,7 +59,7 @@ export default {
           shortName: "ch",
           longName: "Chinese",
           localName: "中文",
-          flag: "/flag_cn.png"
+          flag: "/flag_ch.png"
         },
         // {
         //   shortName: "es",
