@@ -22,7 +22,7 @@
                  </div>
                  <div>
                        <vue-recaptcha ref="recaptcha"
-                           @verify="onVerify" sitekey="6LeBo3kaAAAAAM-1Z5WLQP6EKbouwtzvjCo2Hq9-">
+                           @verify="onVerify" sitekey="6LeBo3kaAAAAAM-1Z5WLQP6EKbouwtzvjCo2Hq9-" :loadRecaptchaScript="true">
                        </vue-recaptcha>
                  </div>
                   <div>
