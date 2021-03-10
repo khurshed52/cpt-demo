@@ -13,6 +13,7 @@
         <b-col cols="5">
         <div class="right_side">
           <h3> Login </h3>
+          <form @submit.prevent="submit" ref="contactForm">
                  <div>
                    <v-text-field label="Email or mt4 account" outlined dense prepend-inner-icon="mdi-map-marker"> </v-text-field>
                  </div>
@@ -20,11 +21,14 @@
                    <v-text-field label="User password or mt4 password " outlined dense prepend-inner-icon="mdi-map-marker"> </v-text-field>
                  </div>
                  <div>
-                      <vue-recaptcha sitekey="6LeBo3kaAAAAAM-1Z5WLQP6EKbouwtzvjCo2Hq9-"></vue-recaptcha>
+                       <vue-recaptcha ref="recaptcha"
+                           @verify="onVerify" sitekey="6LeBo3kaAAAAAM-1Z5WLQP6EKbouwtzvjCo2Hq9-">
+                       </vue-recaptcha>
                  </div>
                   <div>
                     <v-btn color="main" type="submit"> Login </v-btn>
                   </div>
+          </form>
       </div>
         </b-col>
       </b-row>
@@ -61,7 +65,7 @@ import axios from 'axios'
 export default {
   name: 'Home',
   components:{
-    VueRecaptcha
+    'vue-recaptcha': VueRecaptcha
   },
   data(){
     return {
@@ -81,6 +85,14 @@ export default {
   },
 
   methods:{
+    submit: function() {
+      if (this.formData.robot) {
+        
+      }
+    },
+    onVerify: function (response) {
+      if (response) this.formData.robot = true;
+    },
     createUser(){
       // ! console.log(this.formData)
       axios.post('https://jsonplaceholder.typicode.com/posts', this.formData)
