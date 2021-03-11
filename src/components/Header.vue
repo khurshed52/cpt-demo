@@ -64,6 +64,7 @@ export default {
     color: $secondry_color;
     font-size: 16px;
     margin-top: 10px;
+    font-weight: bold;
 }
 
 .icon.outbound {

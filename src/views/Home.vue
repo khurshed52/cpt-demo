@@ -14,11 +14,13 @@
         <div class="right_side">
           <h3> {{ $t('loginMenu.login') }}  </h3>
           <form @submit.prevent="submit" ref="contactForm">
-                 <div>
-                   <v-text-field v-bind:label="$t('loginMenu.email')" outlined dense prepend-inner-icon="mdi-account"> </v-text-field>
+                 <div class="relative">
+                   <v-text-field v-bind:label="$t('loginMenu.email')" outlined v-model="formData.email"> </v-text-field>
+                   <v-icon large>mdi-account</v-icon>
                  </div>
-                  <div>
-                   <v-text-field v-bind:label="$t('loginMenu.password')" outlined dense prepend-inner-icon="mdi-lock"> </v-text-field>
+                  <div class="relative">
+                   <v-text-field v-bind:label="$t('loginMenu.password')" outlined v-model="formData.password"> </v-text-field>
+                    <v-icon large>mdi-lock</v-icon>
                  </div>
                  <div>
                        <vue-recaptcha ref="recaptcha"
@@ -26,7 +28,7 @@
                        </vue-recaptcha>
                  </div>
                   <div>
-                    <v-btn block color="main" type="submit" class="mt-5"> {{ $t('loginMenu.login') }}  </v-btn>
+                    <v-btn block x-large color="main" type="submit" class="mt-5"> {{ $t('loginMenu.login') }}  </v-btn>
                   </div>
           </form>
       </div>
@@ -71,8 +73,8 @@ export default {
     return {
       users:[],
       formData: {
-          title:'',
-          body:'',
+          email:'',
+          password:'',
           robot: false,
       }
     }
@@ -85,10 +87,8 @@ export default {
   },
 
   methods:{
-    submit: function() {
-      if (this.formData.robot) {
-        
-      }
+    submit() {
+      console.log(this.formData);
     },
     onVerify: function (response) {
       if (response) this.formData.robot = true;
@@ -108,7 +108,7 @@ export default {
   .home {
     background: url('../assets/login-bg.png');
     width: 100%;
-    height: 100vh;
+    height: calc(100% - 65px);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
@@ -153,7 +153,7 @@ export default {
   .right_side {
     margin-top: 2rem;
     background: #fff;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 20px;
 }
 
@@ -164,6 +164,12 @@ export default {
 
 .v-icon {
     color:$main-color !important;
+}
+
+.relative .v-icon.v-icon {
+  position: absolute;
+  top: 9px;
+  right: 9px;
 }
 
 </style>
