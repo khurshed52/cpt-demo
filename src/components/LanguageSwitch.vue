@@ -57,16 +57,16 @@ export default {
         },
         {
           shortName: "ch",
-          longName: "Chinese",
-          localName: "中文",
+          longName: "chinese simplified ",
+          localName: "中文简体",
           flag: "/flag_ch.png"
         },
-        // {
-        //   shortName: "es",
-        //   longName: "Spanish",
-        //   localName: "Español",
-        //   flag: "/flag_es.svg"
-        // },
+          {
+            shortName: "ct",
+            longName: "chinese traditional",
+            localName: "中文繁體",
+            flag: "/flag_ct.png"
+          },
         // {
         //   shortName: "ru",
         //   longName: "Russian",

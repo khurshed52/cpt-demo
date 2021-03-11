@@ -1,7 +1,7 @@
 <template>
     <div class="header">
        <div class="logo">
-           <img src="../assets/logo.png" alt="logo"/>
+           <img src="../assets/cpt-logo.svg" alt="logo"/>
            <h3 class="logo_head"> {{ $t('crmText') }} </h3>
        </div>
        <div class="right_area">
@@ -37,7 +37,7 @@ export default {
     }
 
 .header .logo img {
-    width: 300px;
+    width: 250px;
 }
 
 .signup {

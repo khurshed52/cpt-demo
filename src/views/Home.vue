@@ -5,20 +5,20 @@
       <b-row align-h="between">
         <b-col cols="6">
            <div class="left_side">
-        <h2>Welcome to CPT Markets</h2>
-        <h6> We are the market leader</h6>
+        <h2> {{ $t('welcomeText') }} </h2>
+        <h5> {{ $t('leader') }} </h5>
         <img src="../assets/trader.png" alt="trader"/>
       </div>
         </b-col>
         <b-col cols="5">
         <div class="right_side">
-          <h3> Login </h3>
+          <h3> {{ $t('loginMenu.login') }}  </h3>
           <form @submit.prevent="submit" ref="contactForm">
                  <div>
-                   <v-text-field label="Email or mt4 account" outlined dense prepend-inner-icon="mdi-map-marker"> </v-text-field>
+                   <v-text-field v-bind:label="$t('loginMenu.email')" outlined dense prepend-inner-icon="mdi-account"> </v-text-field>
                  </div>
                   <div>
-                   <v-text-field label="User password or mt4 password " outlined dense prepend-inner-icon="mdi-map-marker"> </v-text-field>
+                   <v-text-field v-bind:label="$t('loginMenu.password')" outlined dense prepend-inner-icon="mdi-lock"> </v-text-field>
                  </div>
                  <div>
                        <vue-recaptcha ref="recaptcha"
@@ -26,7 +26,7 @@
                        </vue-recaptcha>
                  </div>
                   <div>
-                    <v-btn color="main" type="submit"> Login </v-btn>
+                    <v-btn block color="main" type="submit" class="mt-5"> {{ $t('loginMenu.login') }}  </v-btn>
                   </div>
           </form>
       </div>
@@ -128,8 +128,27 @@ export default {
  }
 
   .left_side img {
-    width: 100%;
+    width: 90%;
+    margin-top: 2rem;
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
   }
+
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+//  @keyframes animateShape {
+//     50%{
+//         cy: 70;
+//         opacity: .1
+//       }
+//   }
 
   .right_side {
     margin-top: 2rem;

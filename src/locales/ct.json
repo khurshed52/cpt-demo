@@ -1,0 +1,12 @@
+{
+    "crmText": "CPT Markets用戶中心管理系統",
+    "signup":"報名",
+    "welcomeText":"歡迎來到CPT市場",
+    "leader":"我們是市場領導者",
+    "loginMenu":{
+        "login":"登錄",
+        "email":"電子郵件或mt4帳戶",
+        "password":"用戶密碼或mt4密碼"
+    },
+    "mode":"英文模式"
+}

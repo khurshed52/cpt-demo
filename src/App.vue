@@ -24,7 +24,7 @@ export default {
 body {
   margin: 0px;
   padding: 0px;
-  font-family: montserrat, sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 16px !important;
 }
 
@@ -43,7 +43,7 @@ li {
   list-style: none;
 }
 #app {
-  font-family: montserrat, sans-serif;
+  font-family: 'Barlow', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

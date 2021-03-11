@@ -1,5 +1,12 @@
 {
   "crmText": "CPT Markets User Center Management System",
   "signup":"Sign Up",
+  "welcomeText":"Welcome to CPT Markets",
+  "leader":"We are the market leader",
+  "loginMenu":{
+    "login":"Login",
+    "email":"Email or mt4 account",
+     "password":"User password or mt4 password"
+  },
   "mode":"English mode"
 }
