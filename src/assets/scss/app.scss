@@ -24,8 +24,6 @@ button {
 }
 
 // form overwrite css
-
-
 .v-input .v-label {
     font-size: 13px;
 }
@@ -34,4 +32,14 @@ button {
     background-color: $main_color !important;
     border-color:$main_color !important;
     color: #fff !important;
+}
+
+// media query
+@media only screen and (max-width:767px) {
+    .header .logo img {
+        width: 180px;
+    }
+    .logo_head {
+        font-size: 12px;
+    } 
 }

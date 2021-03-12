@@ -3,14 +3,14 @@
     <!-- <h1> {{ $t('mode') }}  </h1> -->
     <b-container class="bv-example-row">
       <b-row align-h="between">
-        <b-col cols="6">
+        <b-col xl="6" lg="6" sm="6" md="6" cols="12">
            <div class="left_side">
         <h2> {{ $t('welcomeText') }} </h2>
         <h5> {{ $t('leader') }} </h5>
         <img src="../assets/trader.png" alt="trader"/>
       </div>
         </b-col>
-        <b-col cols="5">
+        <b-col xl="5" lg="5" sm="5" md="5" cols="12">
         <div class="right_side">
           <h3> {{ $t('loginMenu.login') }}  </h3>
           <form @submit.prevent="submit" ref="contactForm">
@@ -28,8 +28,9 @@
                        </vue-recaptcha>
                  </div>
                   <div>
-                    <v-btn block x-large color="main" type="submit" class="mt-5"> {{ $t('loginMenu.login') }}  </v-btn>
+                    <v-btn block x-large color="main" type="submit" class="mt-5 mb-3"> {{ $t('loginMenu.login') }}  </v-btn>
                   </div>
+                  <a href="#" class="forgot"> Forgot Password ?</a>
           </form>
       </div>
         </b-col>
@@ -153,7 +154,7 @@ export default {
   .right_side {
     margin-top: 2rem;
     background: #fff;
-    padding: 2rem;
+    padding: 1.5em;
     border-radius: 20px;
 }
 
@@ -170,6 +171,12 @@ export default {
   position: absolute;
   top: 9px;
   right: 9px;
+}
+
+.forgot {
+  color: $main-color !important;
+  font-size: 16px;
+  text-decoration: underline;
 }
 
 </style>
