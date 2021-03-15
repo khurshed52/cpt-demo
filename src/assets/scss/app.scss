@@ -41,5 +41,13 @@ button {
     }
     .logo_head {
         font-size: 12px;
-    } 
+    }
+    .rounded_btn {
+        white-space: nowrap;
+    }
+    .left_side {
+        text-align: center;
+    }
+    .flex-item:nth-of-type(1) { order: 2; }
+    .flex-item:nth-of-type(2) { order: 1; }
 }

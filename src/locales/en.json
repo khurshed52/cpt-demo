@@ -6,7 +6,8 @@
   "loginMenu":{
     "login":"Login",
     "email":"Email or mt4 account",
-     "password":"User password or mt4 password"
+     "password":"User password or mt4 password",
+     "forgotPassword":"Forgot Password ?"
   },
   "mode":"English mode"
 }

@@ -6,7 +6,8 @@
     "loginMenu":{
         "login":"登錄",
         "email":"電子郵件或mt4帳戶",
-        "password":"用戶密碼或mt4密碼"
+        "password":"用戶密碼或mt4密碼",
+        "forgotPassword":"忘記密碼?"
     },
     "mode":"英文模式"
 }

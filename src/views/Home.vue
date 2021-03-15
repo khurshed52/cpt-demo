@@ -3,14 +3,14 @@
     <!-- <h1> {{ $t('mode') }}  </h1> -->
     <b-container class="bv-example-row">
       <b-row align-h="between">
-        <b-col xl="6" lg="6" sm="6" md="6" cols="12">
+        <b-col xl="6" lg="6" sm="6" md="6" cols="12" class="flex-item">
            <div class="left_side">
         <h2> {{ $t('welcomeText') }} </h2>
         <h5> {{ $t('leader') }} </h5>
         <img src="../assets/trader.png" alt="trader"/>
       </div>
         </b-col>
-        <b-col xl="5" lg="5" sm="5" md="5" cols="12">
+        <b-col xl="5" lg="5" sm="5" md="5" cols="12" class="flex-item">
         <div class="right_side">
           <h3> {{ $t('loginMenu.login') }}  </h3>
           <form @submit.prevent="submit" ref="contactForm">
@@ -30,7 +30,7 @@
                   <div>
                     <v-btn block x-large color="main" type="submit" class="mt-5 mb-3"> {{ $t('loginMenu.login') }}  </v-btn>
                   </div>
-                  <a href="#" class="forgot"> Forgot Password ?</a>
+                  <a href="#" class="forgot">{{ $t('loginMenu.forgotPassword') }}</a>
           </form>
       </div>
         </b-col>
