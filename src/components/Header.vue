@@ -14,14 +14,10 @@
     </div>
 </template>
 <script>
-import LanguageSwitcher from './LanguageSwitcher.vue';
-import Language from './Language.vue';
 import LanguageSwitch from './LanguageSwitch.vue'
 export default {
     name:'Header',
     components:{
-        LanguageSwitcher,
-        Language,
         LanguageSwitch
     }   
 }

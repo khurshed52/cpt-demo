@@ -1,4 +1,6 @@
 <template>
+<div> 
+  <Header/>
   <div class="home">
     <!-- <h1> {{ $t('mode') }}  </h1> -->
     <b-container class="bv-example-row">
@@ -13,13 +15,14 @@
         <b-col xl="5" lg="5" sm="5" md="5" cols="12" class="flex-item">
         <div class="right_side">
           <h3> {{ $t('loginMenu.login') }}  </h3>
-          <form @submit.prevent="submit" ref="contactForm">
+          <form v-on:submit.prevent="submit" ref="contactForm">
                  <div class="relative">
-                   <v-text-field v-bind:label="$t('loginMenu.email')" outlined v-model="formData.email"> </v-text-field>
+                   <v-text-field v-bind:label="$t('loginMenu.email')" outlined v-model.trim="$v.formData.email.$model" :class="{'is-invalid': validationStatus($v.formData.email)}" > </v-text-field>
                    <v-icon large>mdi-account</v-icon>
+                   <div v-if="!$v.formData.email.required" class="invalid-feedback">The full name field is required.</div>
                  </div>
                   <div class="relative">
-                   <v-text-field v-bind:label="$t('loginMenu.password')" outlined v-model="formData.password"> </v-text-field>
+                   <v-text-field v-bind:label="$t('loginMenu.password')" outlined v-model.trim="formData.password"> </v-text-field>
                     <v-icon large>mdi-lock</v-icon>
                  </div>
                  <div>
@@ -59,16 +62,19 @@
       </li>
     </ul> -->
   </div>
+</div>
 </template>
 
 <script>
+import { required, email, minLength, maxLength } from 'vuelidate/lib/validators'
 import VueRecaptcha from 'vue-recaptcha';
-
+import Header from '../components/Header.vue'
 import axios from 'axios'
 export default {
   name: 'Home',
   components:{
-    'vue-recaptcha': VueRecaptcha
+    'vue-recaptcha': VueRecaptcha,
+    Header
   },
   data(){
     return {
@@ -80,6 +86,12 @@ export default {
       }
     }
   },
+  validations: {
+        formData: {
+          email:{required},
+          password:{required}
+      }
+    },
   mounted(){
       axios.get('https://jsonplaceholder.typicode.com/posts')
       .then((res)=> {
@@ -88,8 +100,14 @@ export default {
   },
 
   methods:{
+    validationStatus: function(validation) {
+            return typeof validation != "undefined" ? validation.$error : false;
+        },
     submit() {
-      console.log(this.formData);
+            this.$v.$touch();
+            if (this.$v.$pendding || this.$v.$error) return;
+            console.log(this.formData)
+
     },
     onVerify: function (response) {
       if (response) this.formData.robot = true;
@@ -165,6 +183,10 @@ export default {
 
 .v-icon {
     color:$main-color !important;
+}
+
+.relative {
+  position: relative;
 }
 
 .relative .v-icon.v-icon {
