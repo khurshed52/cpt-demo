@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import jQuery from 'jquery'
+window.$ = window.jQuery = jQuery;
 import './assets/scss/app.scss'
 import i18n from './i18n'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
@@ -18,7 +20,6 @@ Vue.use(Grid)
 Vue.use(VueSweetalert2);
 Vue.use(Fragment.Plugin)
 Vue.use(Vuelidate);
-
 ////import './axios';
 Vue.config.productionTip = false
 new Vue({

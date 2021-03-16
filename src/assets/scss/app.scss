@@ -34,7 +34,7 @@ button {
     color: #fff !important;
 }
 
-// media query
+// media query mobile
 @media only screen and (max-width:767px) {
     .header .logo img {
         width: 180px;
@@ -50,4 +50,11 @@ button {
     }
     .flex-item:nth-of-type(1) { order: 2; }
     .flex-item:nth-of-type(2) { order: 1; }
+    .rounded_btn  {
+        padding: 5px 10px;
+    }
+
+    .mr {
+        margin-right: 0.2rem;
+    }
 }

@@ -19,17 +19,18 @@
                  <div class="relative">
                    <v-text-field v-bind:label="$t('loginMenu.email')" outlined v-model.trim="$v.formData.email.$model" :class="{'is-invalid': validationStatus($v.formData.email)}" > </v-text-field>
                    <v-icon large>mdi-account</v-icon>
-                   <div v-if="!$v.formData.email.required" class="invalid-feedback">The full name field is required.</div>
+                   <!-- <div v-if="!$v.formData.email.required" class="invalid-feedback">The full name field is required.</div> -->
                  </div>
                   <div class="relative">
                    <v-text-field v-bind:label="$t('loginMenu.password')" outlined v-model.trim="formData.password"> </v-text-field>
                     <v-icon large>mdi-lock</v-icon>
                  </div>
                  <div>
-                       <vue-recaptcha ref="recaptcha"
+                       <vue-recaptcha ref="recaptcha" id="recaptcha"
                            @verify="onVerify" sitekey="6LeBo3kaAAAAAM-1Z5WLQP6EKbouwtzvjCo2Hq9-" :loadRecaptchaScript="true">
                        </vue-recaptcha>
                  </div>
+                 <span class="msg-error"> </span>
                   <div>
                     <v-btn block x-large color="main" type="submit" class="mt-5 mb-3"> {{ $t('loginMenu.login') }}  </v-btn>
                   </div>
@@ -39,28 +40,6 @@
         </b-col>
       </b-row>
     </b-container>
-
-    <!-- <div class="login_area">
-      <div class="left_side">
-        <h2>Welcome to CPT Markets</h2>
-        <h6> We are the market leader</h6>
-        <img src="../assets/trader.png" alt="trader"/>
-      </div>
-      <div class="right_side">
-        ff
-      </div>
-    </div> -->
-   <!-- <form @submit.prevent="createUser">
-     <input type="text" placeholder="title" v-model="formData.title"/>
-     <input type="text" placeholder="body" v-model="formData.body"/>
-     <button type="submit"> Save </button>
-   </form> -->
-   <!--  <ul>
-      <li v-for="item in users" :key="item.id">
-        {{item.id}}
-        {{item.title}}
-      </li>
-    </ul> -->
   </div>
 </div>
 </template>
@@ -105,9 +84,13 @@ export default {
         },
     submit() {
             this.$v.$touch();
-            if (this.$v.$pendding || this.$v.$error) return;
-            console.log(this.formData)
-
+            if (this.$v.$pendding || this.$v.$error){
+              return
+            }else {
+               console.log(this.formData)
+               this.formData =''
+              //  this.$router.push('/dashboard')
+            }
     },
     onVerify: function (response) {
       if (response) this.formData.robot = true;
@@ -162,12 +145,7 @@ export default {
     100% { transform: translateY(-10px); }
 }
 
-//  @keyframes animateShape {
-//     50%{
-//         cy: 70;
-//         opacity: .1
-//       }
-//   }
+
 
   .right_side {
     margin-top: 2rem;
