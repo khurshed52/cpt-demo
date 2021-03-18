@@ -88,8 +88,6 @@ export default {
   },
   data() {
     return {
-      zone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      users: [],
       formData: {
         email: "",
         password: "",
@@ -103,12 +101,6 @@ export default {
       password: { required },
     },
   },
-  mounted() {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
-      this.users = res.data;
-    });
-  },
-
   methods: {
     validationStatus: function (validation) {
       return typeof validation != "undefined" ? validation.$error : false;
@@ -125,14 +117,7 @@ export default {
     },
     onVerify: function (response) {
       if (response) this.formData.robot = true;
-    },
-    createUser() {
-      // ! console.log(this.formData)
-      axios
-        .post("https://jsonplaceholder.typicode.com/posts", this.formData)
-        .then((res) => console.log(res));
-      this.formData = "";
-    },
+    }
   },
 };
 </script>

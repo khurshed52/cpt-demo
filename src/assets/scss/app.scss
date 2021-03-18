@@ -36,6 +36,9 @@ button {
 
 // media query mobile
 @media only screen and (max-width:767px) {
+    .header {
+        padding: 10px 5px;
+    }
     .header .logo img {
         width: 165px;
     }
