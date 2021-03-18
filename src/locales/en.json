@@ -7,7 +7,7 @@
     "login":"Login",
     "email":"Email or mt4 account",
      "password":"User password or mt4 password",
-     "loginButton": "登录",
+     "loginButton": "Login",
      "forgotPassword":"Forgot Password ?"
   },
   "mode":"English mode"
