@@ -1,12 +1,13 @@
 {
     "crmText": "CPT Markets旗下用户中心管理系统登录平台",
-    "signup":"报名",
-    "welcomeText":"欢迎来到CPT市场",
+    "signup":"注册",
+    "welcomeText":"欢迎来到 CPTMarkets",
     "leader":"我们是市场领导者",
     "loginMenu":{
-        "login":"登录",
-        "email":"电子邮件或MT4帐户",
-        "password":"用户密码或mt4密码",
+        "login":"用户登录",
+        "email":"请输入邮箱",
+        "password":"请输入用户密码",
+        "loginButton": "登录",
         "forgotPassword":"忘记密码?"
     },
     "mode":"英文模式"

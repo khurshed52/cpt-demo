@@ -58,13 +58,13 @@ export default {
         {
           shortName: "ch",
           longName: "chinese simplified ",
-          localName: "中文简体",
+          localName: "简体中文",
           flag: "/flag_ch.png"
         },
           {
             shortName: "ct",
             longName: "chinese traditional",
-            localName: "中文繁體",
+            localName: "繁體中文",
             flag: "/flag_ct.png"
           },
         // {
@@ -219,6 +219,6 @@ ul {
 }
 
 .langPosition button svg {
-    margin-left: 5px;
+    margin-left: 3px;
 }
 </style>
