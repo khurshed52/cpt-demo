@@ -1,18 +1,19 @@
 <template>
   <div>
+    <!--header component-->
     <Header />
+    <!--header component-->
     <div class="home">
-      <!-- <h1> {{ $t('mode') }}  </h1> -->
       <b-container class="bv-example-row">
         <b-row align-h="between">
-          <b-col xl="6" lg="6" sm="6" md="6" cols="12" class="flex-item">
+          <b-col xl="6" lg="6" sm="5" md="6" cols="12" class="flex-item">
             <div class="left_side">
               <h2>{{ $t("welcomeText") }}</h2>
               <h5>{{ $t("leader") }}</h5>
               <img src="../assets/trader.png" alt="trader" />
             </div>
           </b-col>
-          <b-col xl="5" lg="5" sm="5" md="5" cols="12" class="flex-item">
+          <b-col xl="5" lg="5" sm="7" md="5" cols="12" class="flex-item">
             <div class="right_side">
               <h3>{{ $t("loginMenu.login") }}</h3>
               <form v-on:submit.prevent="submit" ref="contactForm">
@@ -41,14 +42,12 @@
                 <div>
                   <vue-recaptcha
                     ref="recaptcha"
-                    id="recaptcha"
                     @verify="onVerify"
                     sitekey="6LeBo3kaAAAAAM-1Z5WLQP6EKbouwtzvjCo2Hq9-"
                     :loadRecaptchaScript="true"
                   >
                   </vue-recaptcha>
                 </div>
-                <span class="msg-error"> </span>
                 <div>
                   <v-btn
                     block
