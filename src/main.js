@@ -14,6 +14,8 @@ import Fragment from 'vue-fragment'
 import VueSweetalert2 from 'vue-sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import Vuelidate from 'vuelidate'
+import VueCollapse from 'vue2-collapse'
+Vue.use(VueCollapse)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(Grid)
