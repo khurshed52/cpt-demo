@@ -213,8 +213,18 @@
 </template>
 
 <script>
+import axios from '@/axios'
 export default {
   name: "Dashboard",
+  methods:{
+    async loadPost() {
+      let res = await axios.get('posts')
+      console.log(res)
+    }
+  },
+  mounted(){
+    this.loadPost()
+  }
 };
 </script>
 
