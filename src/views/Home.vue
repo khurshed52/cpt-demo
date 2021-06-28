@@ -6,11 +6,11 @@
     <div class="home">
       <b-container class="bv-example-row">
         <b-row align-h="between">
-          <b-col xl="6" lg="6" sm="5" md="6" cols="12" class="flex-item">
+          <b-col xl="6" lg="6" sm="5" md="6" cols="12" class="flex-item" >
             <div class="left_side">
-              <h2>{{ $t("welcomeText") }}</h2>
-              <h5>{{ $t("leader") }}</h5>
-              <img src="../assets/trader.png" alt="trader" />
+              <h2 v-scroll-reveal.reset="{ delay: 200, origin:'top' }">{{ $t("welcomeText") }}</h2>
+              <h5 v-scroll-reveal.reset="{ delay: 250, origin:'bottom' }">{{ $t("leader") }}</h5>
+              <img src="../assets/trader.png" alt="trader"/>
             </div>
           </b-col>
           <b-col xl="5" lg="5" sm="7" md="5" cols="12" class="flex-item">
@@ -152,22 +152,6 @@ h1 {
   animation: mover 1s infinite alternate;
 }
 
-@-webkit-keyframes mover {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
-@keyframes mover {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-10px);
-  }
-}
 
 .right_side {
   margin-top: 2rem;

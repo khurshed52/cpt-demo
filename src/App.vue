@@ -7,6 +7,7 @@
 </template>
 
 <style>
+  @import './assets/css/style.css';
 body {
   margin: 0px;
   padding: 0px;
